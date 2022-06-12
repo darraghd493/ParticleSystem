@@ -1,7 +1,10 @@
 package fun.doge2018.particleSystem.util;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class MathUtil {
-    public static double distance(float x, float y, float x1, float y1) {
+    public double distance(float x, float y, float x1, float y1) {
         float xDistance = (x - x1);
         float yDistance = (y - y1);
 

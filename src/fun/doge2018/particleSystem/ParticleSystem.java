@@ -98,15 +98,10 @@ public class ParticleSystem {
     }
 
     public void render() {
-        GL11.glEnable(GL11.GL_LINE_SMOOTH);
-        GL11.glEnable(GL11.GL_POINT_SMOOTH);
+        RenderUtil.enableSmoothing();
 
         for (Particle particle : particleList) {
-            GL11.glColor4f(1.0f, 1.0f,1.0f, particle.getAlpha() / 255.0f);
-            GL11.glPointSize(particle.getSize());
-            GL11.glBegin(GL11.GL_POINTS);
-            GL11.glVertex2f(particle.getX(), particle.getY());
-            GL11.glEnd();
+            RenderUtil.drawParticle(particle.getX(), particle.getY(), particle.getSize(), particle.getAlpha());
 
             if (displayClosestLines) {
                 float nearestDistance = 0;
@@ -151,8 +146,7 @@ public class ParticleSystem {
             }
         }
 
-        GL11.glDisable(GL11.GL_LINE_SMOOTH);
-        GL11.glDisable(GL11.GL_POINT_SMOOTH);
+        RenderUtil.disableSmoothing();
     }
 
     public void shutdown() {

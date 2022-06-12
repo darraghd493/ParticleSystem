@@ -1,2 +1,2 @@
-# ParticleSystem
-ParticleSystem is a small particle system library I have made. This is demonstrated in the particleSystemDemo project I have made.
+# ParticleSystemDemo
+ParticleSystemDemo is a small demonstration of a small particle system library I have made.
